@@ -17,49 +17,57 @@ let playerPointsCounter = 0;
 let computerPointsCounter = 0;
 
 function tie(){
+    let theFirstChild = results.firstChild;
     const tie = document.createElement("p");
     tie.textContent = "Tie!";
-    results.appendChild(tie);
+    //results.appendChild(tie);
+    results.insertBefore(tie, theFirstChild);
 }
 
 function computerWin(){
+    let theFirstChild = results.firstChild;
     const computerWin = document.createElement("p");
     computerWin.textContent = "Computer Win!";
     computerWin.style.color = "red";
-    results.appendChild(computerWin);
+    //results.appendChild(computerWin);
+    results.insertBefore(computerWin, theFirstChild);
     computerPoints.textContent = "Computer Points: " + ++computerPointsCounter;
 }
 
 function playerWin(){
+    let theFirstChild = results.firstChild;
     const playerWin = document.createElement("p");
     playerWin.textContent = "Player Win!";
     playerWin.style.color = "green";
-    results.appendChild(playerWin);
+    //results.appendChild(playerWin);
+    results.insertBefore(playerWin, theFirstChild);
     playerPoints.textContent = "Player Points: " + ++playerPointsCounter;
 }
 
 function computerWinPrompt(){
+    let theFirstChild = results.firstChild;
     const endGame = document.createElement("p");
     endGame.textContent = "!!!GAME OVER YOU LOSE!!!";
     endGame.style.color = "red";
-    results.appendChild(endGame);
+    results.insertBefore(endGame, theFirstChild);
 }
 
 function playerWinPrompt(){
+    let theFirstChild = results.firstChild;
     const endGame = document.createElement("p");
     endGame.textContent = "!!!GAME OVER YOU WIN!!!";
-    endGame.style.color = "green";
-    results.appendChild(endGame);
+    endGame.style.color = "gold";
+    results.insertBefore(endGame, theFirstChild);
 }
 
 function disableAll(){
     rockbtn.disabled = true;
     paperbtn.disabled = true;
     scissorsbtn.disabled = true;
-    ffbtn.disabled = true;
+    //ffbtn.disabled = true;
 }
 
-function ff(){
+/*function ff(){
     disableAll();
     let child = results.lastElementChild;
     while (child) {
@@ -74,7 +82,7 @@ function ff(){
     endGame.style.fontWeight = "bolder";
     endGame.style.fontSize = "40px";
     results.appendChild(endGame);
-}
+}*/
 
 function play(playerSelection, computerSelection){
     if(playerSelection == "rock"){
@@ -137,9 +145,10 @@ const scissorsbtn = document.querySelector(".scissors");
 scissorsbtn.addEventListener('click', function(){
     play("scissors", getComputerChoice())});
 
-const ffbtn = document.querySelector(".ff");
+/*const ffbtn = document.querySelector(".ff");
 ffbtn.addEventListener('click', function(){
     ff();
-})
+})*/
+
 
 
