@@ -12,6 +12,16 @@ h1{
     font-weight: bold;
 }
 
+h2{
+    color: rgb(255, 225, 161);
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+}
+
+
 .buttons{
     display: flex;
     justify-content: space-evenly;
